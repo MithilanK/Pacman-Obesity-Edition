@@ -12,28 +12,32 @@ public class Entity {
 
     public void move(Vector2 Movement, Entity[] rects) {
         hitbox.position.x += Movement.x;
-        for (Entity E : rects) {
-            Rect rect = E.hitbox;
-            if (rect.colliderect(hitbox)) {
-                if (Movement.x > 0) {
-                    hitbox.setRight(rect.getLeft());
-                }
-                if (Movement.x < 0) {
-                    hitbox.setLeft(rect.getRight());
-                }
-            }
+        if (rects != null) {
+	        for (Entity E : rects) {
+	            Rect rect = E.hitbox;
+	            if (rect.colliderect(hitbox)) {
+	                if (Movement.x > 0) {
+	                    hitbox.setRight(rect.getLeft());
+	                }
+	                if (Movement.x < 0) {
+	                    hitbox.setLeft(rect.getRight());
+	                }
+	            }
+	        }
         }
         hitbox.position.y += Movement.y;
-        for (Entity E : rects) {
-            Rect rect = E.hitbox;
-            if (rect.colliderect(hitbox)) {
-                if (Movement.y > 0) {
-                    hitbox.setTop(rect.getBottom());
-                }
-                if (Movement.y < 0) {
-                    hitbox.setBottom(rect.getTop());
-                }
-            }
+        if (rects != null) { 
+	        for (Entity E : rects) {
+	            Rect rect = E.hitbox;
+	            if (rect.colliderect(hitbox)) {
+	                if (Movement.y > 0) {
+	                    hitbox.setTop(rect.getBottom());
+	                }
+	                if (Movement.y < 0) {
+	                    hitbox.setBottom(rect.getTop());
+	                }
+	            }
+	        }
         }
 
     }

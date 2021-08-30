@@ -4,8 +4,8 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Rect {
     public Vector2 position;
-    float width;
-    float height;
+    public float width;
+    public float height;
     public Rect(float x, float y, float width, float height) {
         this.position = new Vector2(x, y);
         this.width = width;

@@ -15,6 +15,7 @@ public class VibeGame extends Game {
 	public void create () {
 		ps = new PlayState(this);
 		this.setScreen(ps);
+		
 	}
 
 	@Override
